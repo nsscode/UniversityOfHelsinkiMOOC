@@ -4,7 +4,6 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        // implement here your program that uses the TelevisionProgram class
 
         ArrayList<TelevisionProgram> programs = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
@@ -21,7 +20,6 @@ public class Main {
 
             // Ask user for the duration of the show
             System.out.print("Duration: ");
-            // int durationShow = scanner.nextInt();
             int durationShow = Integer.valueOf(scanner.nextLine());
 
             // Create a TelevionProgram object and add it to the collection
