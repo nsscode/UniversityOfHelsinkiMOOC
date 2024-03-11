@@ -13,7 +13,7 @@ public class NumberOfStrings {
             if (input.equals("end")) {
                 break;
             }
-
+            
             numberOfStrings++;
         }
 
