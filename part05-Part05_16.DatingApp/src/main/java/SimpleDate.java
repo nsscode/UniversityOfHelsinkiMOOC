@@ -34,15 +34,16 @@ public class SimpleDate {
     }
 
     public void advance() {
-        if (this.day < 30) {
-            this.day = this.day + 1;
-        } else if (this.month < 12) {
-            this.month = this.month + 1;
+        this.day = this.day + 1;
+
+        if (this.day > 30) {
+            this.month++;
             this.day = 1;
-        } else {
-            this.year = this.year + 1;
-            this.month = 1;
-            this.day = 1;
+
+            if (this.month > 12) {
+                this.year++;
+                this.month = 1;
+            }
         }
 
     }
@@ -50,19 +51,7 @@ public class SimpleDate {
     public void advance(int howManyDays) {
         // Loop through each day to advance by the specified number of days
         for (int i = 0; i < howManyDays; i++) {
-            this.day++; // Increment the day by one
-
-            // Checks if the day exceeds 30
-            if (this.day > 30) {
-                this.day = 1; // If so, reset day to 1
-                this.month++; // Increment the month
-
-                // Checks if the month exceeds 12
-                if (this.month > 12) {
-                    this.month = 1; // If so, reset month to 1
-                    this.year++; // Increment the year
-                }
-            }
+            this.advance();
         }
     }
 
